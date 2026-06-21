@@ -10,6 +10,7 @@ challenge = st.text_area("Describe your business challenge")
 
 if st.button("Analyze Business"):
 
+    # Financial Agent
     st.header("Financial Agent")
 
     if revenue < 1000000:
@@ -25,9 +26,15 @@ if st.button("Analyze Business"):
             "The business demonstrates significant scale. Focus should be on financial efficiency, capital allocation, and sustainable growth."
         )
 
+    # Credit Agent
     st.header("Credit Agent")
 
-    if "loan" in challenge.lower() or "credit" in challenge.lower() or "finance" in challenge.lower():
+    if (
+        "loan" in challenge.lower()
+        or "credit" in challenge.lower()
+        or "finance" in challenge.lower()
+        or "financing" in challenge.lower()
+    ):
         st.write(
             "The challenge suggests financing constraints. The business should improve financial documentation, maintain credit discipline, and explore MSME financing options."
         )
@@ -40,23 +47,26 @@ if st.button("Analyze Business"):
             "The business should periodically assess its credit readiness and maintain strong financial records."
         )
 
+    # Growth Agent
     st.header("Growth Agent")
 
     if employees < 20:
         st.write(
-            "The business may benefit from expanding its customer base, strengthening digital presence, and improving operational efficiency."
+            "The business may benefit from expanding its customer base, strengthening its digital presence, and improving operational efficiency."
         )
     else:
         st.write(
-            "The business has the workforce capacity to pursue market expansion, product diversification, and process optimization."
+            "The business has workforce capacity to pursue market expansion, product diversification, and process optimization."
         )
 
+    # Government Scheme Agent
     st.header("Government Scheme Agent")
 
     st.write(
         "The business may explore MSME-focused government initiatives, credit guarantee schemes, and entrepreneurship support programs based on eligibility."
     )
 
+    # Consultant Agent
     st.header("Consultant Agent")
 
     st.subheader("Business Summary")
@@ -70,9 +80,19 @@ if st.button("Analyze Business"):
 
     if "cash flow" in challenge.lower():
         st.write("• Improve cash flow forecasting and working capital management.")
-    if "loan" in challenge.lower() or "credit" in challenge.lower():
+
+    if (
+        "loan" in challenge.lower()
+        or "credit" in challenge.lower()
+        or "finance" in challenge.lower()
+        or "financing" in challenge.lower()
+    ):
         st.write("• Strengthen credit profile and explore financing alternatives.")
-    if "growth" in challenge.lower() or "expansion" in challenge.lower():
+
+    if (
+        "growth" in challenge.lower()
+        or "expansion" in challenge.lower()
+    ):
         st.write("• Develop a structured growth and market expansion strategy.")
 
     st.write(
